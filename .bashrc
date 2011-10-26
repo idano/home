@@ -101,7 +101,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 #source ~/.nova/novarc
-[[ -s "/Users/mseelaus/.rvm/scripts/rvm" ]] && source "/Users/mseelaus/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+#[[ -s "/Users/mseelaus/.rvm/scripts/rvm" ]] && source "/Users/mseelaus/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
 # periodically upload file changes to git
 ~/bin/synchome.sh 2>&1 >> .synclog &
