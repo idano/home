@@ -1,92 +1,6 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" cool stuff
-" more cool stuff
-" Maintainer: amix the lucky stiff
-"             http://amix.dk - amix@amix.dk
-"
-" Version: 3.6 - 25/08/10 14:40:30
-"
-" Blog_post: 
-"       http://amix.dk/blog/post/19486#The-ultimate-vim-configuration-vimrc
 " Syntax_highlighted:
 "       http://amix.dk/vim/vimrc.html
-" Raw_version: 
-"       http://amix.dk/vim/vimrc.txt
-"
-" How_to_Install_on_Unix:
-"    $ mkdir ~/.vim_runtime
-"    $ svn co svn://orangoo.com/vim ~/.vim_runtime
-"    $ cat ~/.vim_runtime/install.sh
-"    $ sh ~/.vim_runtime/install.sh <system>
-"      <sytem> can be `mac`, `linux` or `windows`
-"
-"testing
-" How_to_Upgrade:
-"    $ svn update ~/.vim_runtime
-"
-" Sections:
-"    -> General
-"    -> VIM user interface
-"    -> Colors and Fonts
-"    -> Files and backups
-"    -> Text, tab and indent related
-"    -> Visual mode related
-"    -> Command mode related
-"    -> Moving around, tabs and buffers
-"    -> Statusline
-"    -> Parenthesis/bracket expanding
-"    -> General Abbrevs
-"    -> Editing mappings
-"
-"    -> Cope
-"    -> Minibuffer plugin
-"    -> Omni complete functions
-"    -> Python section
-"    -> JavaScript section
-"
-"
-" Plugins_Included:
-"     > minibufexpl.vim - http://www.vim.org/scripts/script.php?script_id=159
-"       Makes it easy to get an overview of buffers:
-"           info -> :e ~/.vim_runtime/plugin/minibufexpl.vim
-"
-"     > bufexplorer - http://www.vim.org/scripts/script.php?script_id=42
-"       Makes it easy to switch between buffers:
-"           info -> :help bufExplorer
-"
-"     > yankring.vim - http://www.vim.org/scripts/script.php?script_id=1234
-"       Emacs's killring, useful when using the clipboard:
-"           info -> :help yankring
-"
-"     > surround.vim - http://www.vim.org/scripts/script.php?script_id=1697
-"       Makes it easy to work with surrounding text:
-"           info -> :help surround
-"
-"     > snipMate.vim - http://www.vim.org/scripts/script.php?script_id=2540
-"       Snippets for many languages (similar to TextMate's):
-"           info -> :help snipMate
-"
-"     > mru.vim - http://www.vim.org/scripts/script.php?script_id=521
-"       Plugin to manage Most Recently Used (MRU) files:
-"           info -> :e ~/.vim_runtime/plugin/mru.vim
-"
-"     > Command-T - http://www.vim.org/scripts/script.php?script_id=3025
-"       Command-T plug-in provides an extremely fast, intuitive mechanism for opening filesa:
-"           info -> :help CommandT
-"           screencast and web-help -> http://amix.dk/blog/post/19501
-"
-"
-"  Revisions:
-"     > 3.6: Added lots of stuff (colors, Command-T, Vim 7.3 persistent undo etc.)
-"     > 3.5: Paste mode is now shown in status line  if you are in paste mode
-"     > 3.4: Added mru.vim
-"     > 3.3: Added syntax highlighting for Mako mako.vim 
-"     > 3.2: Turned on python_highlight_all for better syntax
-"            highlighting for Python
-"     > 3.1: Added revisions ;) and bufexplorer.vim
-"
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
@@ -113,7 +27,7 @@ nmap <leader>w :w!<cr>
 map <leader>e :e! ~/.vimrc<cr>
 
 " When vimrc is edited, reload it
-autocmd! bufwritepost vimrc source ~/.vimrc
+autocmd! bufwritepost .vimrc source ~/.vimrc
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -222,140 +136,50 @@ vnoremap <silent> # :call VisualSearch('b')<CR>
 "map <leader>g :vimgrep // **/*.<left><left><left><left><left><left><left>
 
 
-function! CmdLine(str)
-    exe "menu Foo.Bar :" . a:str
-    emenu Foo.Bar
-    unmenu Foo
-endfunction
-
-" From an idea by Michael Naumann
-function! VisualSearch(direction) range
-    let l:saved_reg = @"
-    execute "normal! vgvy"
-
-    let l:pattern = escape(@", '\\/.*$^~[]')
-    let l:pattern = substitute(l:pattern, "\n$", "", "")
-
-    if a:direction == 'b'
-        execute "normal ?" . l:pattern . "^M"
-    elseif a:direction == 'gv'
-        call CmdLine("vimgrep " . '/'. l:pattern . '/' . ' **/*.')
-    elseif a:direction == 'f'
-        execute "normal /" . l:pattern . "^M"
-    endif
-
-    let @/ = l:pattern
-    let @" = l:saved_reg
-endfunction
-
-
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Command mode related
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Smart mappings on the command line
-"cno $h e ~/
-"cno $d e ~/Desktop/
-"cno $j e ./
-"cno $c e <C-\>eCurrentFileDir("e")<cr>
-
-" $q is super useful when browsing on the command line
-"cno $q <C-\>eDeleteTillSlash()<cr>
 
 " Bash like keys for the command line
-"cnoremap <C-A>      <Home>
-"cnoremap <C-E>      <End>
-"cnoremap <C-K>      <C-U>
-
-"cnoremap <C-P> <Up>
-"cnoremap <C-N> <Down>
-
-" Useful on some European keyboards
-"map ½ $
-"imap ½ $
-"vmap ½ $
-"cmap ½ $
-
-
-"func! Cwd()
-"  let cwd = getcwd()
-"  return "e " . cwd 
-"endfunc
-
-"func! DeleteTillSlash()
-"  let g:cmd = getcmdline()
-"  let g:cmd_edited = substitute(g:cmd, "\\(.*\[/\]\\).*", "\\1", "")
-"  if g:cmd == g:cmd_edited
-"    let g:cmd_edited = substitute(g:cmd, "\\(.*\[/\]\\).*/", "\\1", "")
-"  endif
-"  return g:cmd_edited
-"endfunc
-
-"func! CurrentFileDir(cmd)
-"  return a:cmd . " " . expand("%:p:h") . "/"
-"endfunc
-
+cnoremap <C-A>      <Home>
+cnoremap <C-E>      <End>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Moving around, tabs and buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Map space to / (search) and c-space to ? (backgwards search)
-"map <space> /
-"map <c-space> ?
-"map <silent> <leader><cr> :noh<cr>
+map <space> /
+map <c-space> ?
+map <silent> <leader><cr> :noh<cr>
 
 " Smart way to move btw. windows
-"map <C-j> <C-W>j
-"map <C-k> <C-W>k
-"map <C-h> <C-W>h
-"map <C-l> <C-W>l
-
-" Close the current buffer
-"map <leader>bd :Bclose<cr>
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
 
 " Close all the buffers
 "map <leader>ba :1,300 bd!<cr>
 
 " Use the arrows to something usefull
-"map <right> :bn<cr>
-"map <left> :bp<cr>
+map <right> :bn<cr>
+map <left> :bp<cr>
 
 " Tab configuration
-"map <leader>tn :tabnew<cr>
-"map <leader>te :tabedit
-"map <leader>tc :tabclose<cr>
-"map <leader>tm :tabmove
+map <leader>tn :tabnew<cr>
+map <leader>te :tabedit
+map <leader>tc :tabclose<cr>
+map <leader>tm :tabmove
 
 " When pressing <leader>cd switch to the directory of the open buffer
 "map <leader>cd :cd %:p:h<cr>
 
-
-"command! Bclose call <SID>BufcloseCloseIt()
-"function! <SID>BufcloseCloseIt()
-"   let l:currentBufNum = bufnr("%")
-"   let l:alternateBufNum = bufnr("#")
-"
-"   if buflisted(l:alternateBufNum)
-"     buffer #
-"   else
-"     bnext
-"   endif
-"
-"   if bufnr("%") == l:currentBufNum
-"     new
-"   endif
-"
-"   if buflisted(l:currentBufNum)
-"     execute("bdelete! ".l:currentBufNum)
-"   endif
-"endfunction
-
 " Specify the behavior when switching between buffers 
-"try
-"  set switchbuf=usetab
-"  set stal=2
-"catch
-"endtry
+try
+  set switchbuf=usetab
+  set stal=2
+catch
+endtry
 
 
 """"""""""""""""""""""""""""""
@@ -381,60 +205,13 @@ function! HasPaste()
     endif
 endfunction
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Parenthesis/bracket expanding
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"vnoremap $1 <esc>`>a)<esc>`<i(<esc>
-"vnoremap $2 <esc>`>a]<esc>`<i[<esc>
-"vnoremap $3 <esc>`>a}<esc>`<i{<esc>
-"vnoremap $$ <esc>`>a"<esc>`<i"<esc>
-"vnoremap $q <esc>`>a'<esc>`<i'<esc>
-"vnoremap $e <esc>`>a"<esc>`<i"<esc>
-"
-"" Map auto complete of (, ", ', [
-"inoremap $1 ()<esc>i
-"inoremap $2 []<esc>i
-"inoremap $3 {}<esc>i
-"inoremap $4 {<esc>o}<esc>O
-"inoremap $q ''<esc>i
-"inoremap $e ""<esc>i
-"inoremap $t <><esc>i
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => General Abbrevs
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"iab xdate <c-r>=strftime("%d/%m/%y %H:%M:%S")<cr>
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editing mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Remap VIM 0
 "map 0 ^
 
-"Move a line of text using ALT+[jk] or Comamnd+[jk] on mac
-"nmap <M-j> mz:m+<cr>`z
-"nmap <M-k> mz:m-2<cr>`z
-"vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
-"vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
-"
-""if MySys() == "mac"
-"  nmap <D-j> <M-j>
-"  nmap <D-k> <M-k>
-"  vmap <D-j> <M-j>
-"  vmap <D-k> <M-k>
-""endif
 
-"Delete trailing white space, useful for Python ;)
-"func! DeleteTrailingWS()
-"  exe "normal mz"
-"  %s/\s\+$//ge
-"  exe "normal `z"
-"endfunc
-"autocmd BufWrite *.py :call DeleteTrailingWS()
-"
 set guitablabel=%t
 
 
@@ -443,17 +220,7 @@ set guitablabel=%t
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Do :help cope if you are unsure what cope is. It's super useful!
 map <leader>cc :botright cope<cr>
-map <leader>n :cn<cr>
-map <leader>p :cp<cr>
-
-
-""""""""""""""""""""""""""""""
-" => bufExplorer plugin
-""""""""""""""""""""""""""""""
-"let g:bufExplorerDefaultHelp=0
-"let g:bufExplorerShowRelativePath=1
-"map <leader>o :BufExplorer<cr>
-
+"map <leader>n :cn<cr>
 
 """"""""""""""""""""""""""""""
 " => Minibuffer plugin
@@ -471,25 +238,6 @@ map <leader>p :cp<cr>
 "autocmd BufRead,BufNew :call UMiniBufExplorer
 "
 "map <leader>u :TMiniBufExplorer<cr>
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Omni complete functions
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Spell checking
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Pressing ,ss will toggle and untoggle spell checking
-"map <leader>ss :setlocal spell!<cr>
-
-"Shortcuts using <leader>
-"map <leader>sn ]s
-"map <leader>sp [s
-"map <leader>sa zg
-"map <leader>s? z=
 
 
 """"""""""""""""""""""""""""""
@@ -511,69 +259,6 @@ au FileType python map <buffer> <leader>C ?class
 au FileType python map <buffer> <leader>D ?def
 
 
-""""""""""""""""""""""""""""""
-" => JavaScript section
-"""""""""""""""""""""""""""""""
-au FileType javascript call JavaScriptFold()
-au FileType javascript setl fen
-au FileType javascript setl nocindent
-
-au FileType javascript imap <c-t> AJS.log();<esc>hi
-au FileType javascript imap <c-a> alert();<esc>hi
-
-au FileType javascript inoremap <buffer> $r return
-au FileType javascript inoremap <buffer> $f //--- PH ----------------------------------------------<esc>FP2xi
-
-function! JavaScriptFold()
-    setl foldmethod=syntax
-    setl foldlevelstart=1
-    syn region foldBraces start=/{/ end=/}/ transparent fold keepend extend
-
-    function! FoldText()
-    return substitute(getline(v:foldstart), '{.*', '{...}', '')
-    endfunction
-    setl foldtext=FoldText()
-endfunction
-
-
-""""""""""""""""""""""""""""""
-" => MRU plugin
-""""""""""""""""""""""""""""""
-let MRU_Max_Entries = 400
-map <leader>f :MRU<CR>
-
-
-""""""""""""""""""""""""""""""
-" => Command-T
-""""""""""""""""""""""""""""""
-let g:CommandTMaxHeight = 15
-set wildignore+=*.o,*.obj,.git,*.pyc
-noremap <leader>j :CommandT<cr>
-noremap <leader>y :CommandTFlush<cr>
-
-
-""""""""""""""""""""""""""""""
-" => Vim grep
-""""""""""""""""""""""""""""""
-let Grep_Skip_Dirs = 'RCS CVS SCCS .svn generated'
-set grepprg=/bin/grep\ -nH
-
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => MISC
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Remove the Windows ^M - when the encodings gets messed up
-"noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
-
-"Quickly open a buffer for scripbble
-"map <leader>q :e ~/buffer<cr>
-"au BufRead,BufNewFile ~/buffer iab <buffer> xh1 ===========================================
-
-"map <leader>pp :setlocal paste!<cr>
-
-"map <leader>bb :cd ..<cr>
-"
 set cursorline
 set cursorcolumn
 call pathogen#infect()
@@ -584,38 +269,36 @@ autocmd VimEnter * wincmd p
 """""""""""""""""""""""""""""
 " CONQUE_TERM CONFIG
 """""""""""""""""""""""""""""
-"let g:ConqueTerm_ExecFileKey = '<C-F11>'
-"let g:ConqueTerm_SendFileKey = '<C-F10>'
-"let g:ConqueTerm_SendVisKey = '<C-F11>'
-
-function! CTToggle()
-  if exists('g:ct_winnr')
-                if g:ct_winnr == winnr()
-                      exec g:ct_winnr . "wincmd w"
-                      unlet g:ct_winnr
-                      bd
-                else
-                      exec g:ct_winnr . "wincmd w"
-      resize 10
-                endif
+function! ConqueToggle()
+  if exists("g:ct_is_on")
+    " turn it off
+    exec "bwipeout CONQUESHELL"
+    unlet g:ct_is_on
   else
-    split
-    wincmd J
+    " turn it on 
+    let g:ct_is_on = 1
+    exec "ConqueTermSplit "$SHELL
+    exec "f CONQUESHELL"
     resize 10
-    let g:ct_winnr = winnr()
-    exec "ConqueTerm bash --login"
-                exec "NERDTree"
-                exec g:ct_winnr . "wincmd w"
   endif
 endfunction
 
-" Crazy ConqueTerm mappings
-" NOTE: you can only use '--login' if you're not using coloring or you've
-" updated your .profile to display without color when "$CONQUE" != "".
-" 
-" NOTE: your scroll back will kill your ram if you leave ConqueTerm open too
-" long. I've mapped <C-D> and <leader>bd to delete buffers, which closes the
-" window and file. This will clear slowness with your ConqueTerm.
-" map <leader>s:call CTToggle()<CR>
-nm <C-T> :call CTToggle()<CR>
+map <C-T> :call ConqueToggle()<CR>
+imap <C-T> <ESC>:call ConqueToggle()<CR>
 
+" resize window with Shift-cursors
+map <S-left> :vertical resize +1<CR>
+map <S-down> :resize -1<CR>
+map <S-up> :resize +1<CR>
+map <S-right> :vertical resize -1<CR>
+
+imap <S-left> <ESC>:vertical resize +1<CR>
+imap <S-down> <ESC>:resize -1<CR>
+imap <S-up> <ESC>:resize +1<CR>
+imap <S-right> <ESC>:vertical resize -1<CR>
+
+"Move a line of text using ALT+[jk] or Comamnd+[jk] on mac
+nmap <S-J> mz:m+<cr>`z
+nmap <S-K> mz:m-2<cr>`z
+vmap <S-J> :m'>+<cr>`<my`>mzgv`yo`z
+vmap <S-K> :m'<-2<cr>`>my`<mzgv`yo`z
