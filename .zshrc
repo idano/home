@@ -178,5 +178,11 @@ zstyle ':completion:*:ssh:*' tag-order \
 zstyle ':completion:*:ssh:*' group-order \
    hosts-domain hosts-host users hosts-ipaddr
 zstyle '*' single-ignored show
-#ZSH_THEME="jreese"
+ZSH_THEME="jreese"
+#ZSH_THEME="blinks"
 [[ -s "/Users/mseelaus/.rvm/scripts/rvm" ]] && source "/Users/mseelaus/.rvm/scripts/rvm"  # This loads RVM into a  shell session.
+# speed up zsh completion
+zstyle ':completion:*' accept-exact '*(N)'
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
+
