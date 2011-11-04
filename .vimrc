@@ -8,6 +8,7 @@
 " Sets how many lines of history VIM has to remember
 set history=700
 
+"set mouse=a
 " Enable filetype plugin
 filetype plugin on
 filetype indent on
@@ -286,6 +287,8 @@ endfunction
 map <C-T> :call ConqueToggle()<CR>
 imap <C-T> <ESC>:call ConqueToggle()<CR>
 
+map <C-N> :NERDTreeToggle<CR>
+imap <C-N> <ESC>:NERDTreeToggle<CR>
 " resize window with Shift-cursors
 map <S-left> :vertical resize +1<CR>
 map <S-down> :resize -1<CR>
