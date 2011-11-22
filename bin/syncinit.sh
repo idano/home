@@ -13,10 +13,13 @@ else
         echo 'go'
         # get keys from manubuntu
 # TODO: get from another server (ssvm)
+        # set perms for authorized_keys if it exists
+        chmod u+w ~/.ssh/authorized_keys || true
         scp -r mseelaus.np.wc1.yellowpages.com:~/.ssh .
         chmod 0600 .ssh/*
 # TODO: check if git is installed
-        git clone git@git.corp.attinteractive.com:mseelaus/home.git
+        #git clone git@git.corp.attinteractive.com:mseelaus/home.git
+        git clone git@github.com:idano/home.git
         rsync -a home/ .
         rm -rf home
         chmod 0600 .ssh/*
