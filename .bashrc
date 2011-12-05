@@ -111,3 +111,5 @@ export PATH=/home/t/ruby-1.9.2-p290-2/bin/:$PATH
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 # periodically upload file changes to git
 ~/bin/synchome.sh 2>&1 >> .synclog &
+# periodically upload file changes to git
+~/bin/synchome.sh 2>&1 >> .synclog &
