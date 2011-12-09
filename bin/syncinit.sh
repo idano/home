@@ -14,15 +14,15 @@ else
         # get keys from manubuntu
 # TODO: get from another server (ssvm)
         # set perms for authorized_keys if it exists
-        chmod u+w ~/.ssh/authorized_keys || true
-        scp -r mseelaus.np.wc1.yellowpages.com:~/.ssh .
-        chmod 0600 .ssh/*
+        sudo chmod u+w ~/.ssh/authorized_keys || true
+        scp -r mseelaus.np.wc1.yellowpages.com:~/.ssh . || true
+        sudo chmod 0600 .ssh/*
 # TODO: check if git is installed
         #git clone git@git.corp.attinteractive.com:mseelaus/home.git
         git clone git@github.com:idano/home.git
         rsync -a home/ .
         rm -rf home
-        chmod 0600 .ssh/*
+        sudo chmod 0600 .ssh/*
         echo "switching to zsh, you'll have to enter your password'"
         chsh -s /bin/zsh mseelaus
         echo '# periodically upload file changes to git' >> .bashrc
