@@ -113,3 +113,5 @@ export PATH=/home/t/ruby-1.9.2-p290-2/bin/:$PATH
 ~/bin/synchome.sh 2>&1 >> .synclog &
 # periodically upload file changes to git
 ~/bin/synchome.sh 2>&1 >> .synclog &
+# periodically upload file changes to git
+~/bin/synchome.sh 2>&1 >> .synclog &
