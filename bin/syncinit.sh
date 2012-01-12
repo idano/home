@@ -23,8 +23,8 @@ else
         rsync -a home/ .
         rm -rf home
         sudo chmod 0600 .ssh/*
-        echo "switching to zsh, you'll have to enter your password'"
-        chsh -s /bin/zsh mseelaus
+        #echo "switching to zsh, you'll have to enter your password'"
+        #chsh -s /bin/zsh mseelaus
         echo '# periodically upload file changes to git' >> .bashrc
         echo '~/bin/synchome.sh 2>&1 >> .synclog &' >> .bashrc
     fi
