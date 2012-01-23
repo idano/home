@@ -13,7 +13,7 @@ setopt bash_autolist
 autoload -U colors && colors
 local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 PS1="%{$fg[blue]%}%~ %{$reset_color%}%% "
-RPROMPT="%{$fg[red]%}%n%{$reset_color%}@%{$fg[yellow]%}%m ${return_code} %{$fg[green]%}%t%{$reset_color%}"
+RPROMPT="%{$fg[green]%}%n%{$reset_color%}@%{$fg[yellow]%}%m %{$fg[red]%}${return_code} %{$reset_color%}%t"
 
 unsetopt correct_all
 
