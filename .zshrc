@@ -1,5 +1,6 @@
 # Set to this to use case-sensitive completion
 CASE_SENSITIVE="true"
+setopt bash_autolist
 
 # Uncomment following line if you want to disable autosetting terminal title.
 # DISABLE_AUTO_TITLE="true"
@@ -11,8 +12,8 @@ CASE_SENSITIVE="true"
 # colors and prompt
 autoload -U colors && colors
 local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
-PS1="%{$fg[green]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}%~ %{$reset_color%}%% "
-RPROMPT="${return_code} %t"
+PS1="%{$fg[blue]%}%~ %{$reset_color%}%% "
+RPROMPT="%{$fg[red]%}%n%{$reset_color%}@%{$fg[yellow]%}%m ${return_code} %{$fg[green]%}%t%{$reset_color%}"
 
 unsetopt correct_all
 
