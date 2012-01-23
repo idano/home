@@ -1,3 +1,4 @@
+zsh
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -110,4 +111,4 @@ export PATH=/home/t/ruby-1.9.2-p290-2/bin/:$PATH
 #complete -W "$(echo `cat ~/.ssh/known_hosts | cut -f 1 -d ' ' | sed -e s/,.*//g | uniq | grep -v "\["`;)" ssh
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 # periodically upload file changes to git
-#~/bin/synchome.sh 2>&1 >> .synclog &
+~/bin/synchome.sh 2>&1 >> .synclog &
