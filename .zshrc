@@ -14,12 +14,12 @@ autoload -U colors && colors
 local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 PS1="%{$fg[blue]%}%~ %{$reset_color%}%% "
 RPROMPT="%{$fg[green]%}%n%{$reset_color%}@%{$fg[yellow]%}%m %{$fg[red]%}${return_code} %{$reset_color%}%t"
+# save history and make it available to all shells
+HISTFILE=~/.zsh_history2
+setopt inc_append_history
+setopt share_history
 
 unsetopt correct_all
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 
-# save history and make it available to all shells
-HISTFILE=~/.zsh_history2
-setopt inc_append_history
-setopt share_history
