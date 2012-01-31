@@ -18,3 +18,7 @@ RPROMPT="%{$fg[green]%}%n%{$reset_color%}@%{$fg[yellow]%}%m %{$fg[red]%}${return
 unsetopt correct_all
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+
+# save history and make it available to all shells
+setopt inc_append_history
+setopt share_history
