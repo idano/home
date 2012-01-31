@@ -20,5 +20,6 @@ unsetopt correct_all
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 
 # save history and make it available to all shells
+HISTFILE=~/.zsh_history2
 setopt inc_append_history
 setopt share_history
