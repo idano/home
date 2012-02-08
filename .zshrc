@@ -24,4 +24,3 @@ HISTFILE=~/.zsh_history
 unsetopt correct_all
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
-
