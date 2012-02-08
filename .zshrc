@@ -19,7 +19,7 @@ setopt inc_append_history
 setopt share_history
 HISTSIZE=10000
 SAVEHIST=10000
-HISTFILE=~/.zsh_history2
+HISTFILE=~/.zsh_history
 
 #unsetopt correct_all
 
