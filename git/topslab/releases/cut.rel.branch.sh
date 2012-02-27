@@ -3,6 +3,12 @@
 # merges features into a release branch according to
 # http://wiki.yellowpages.com/display/CP/So+You+Wanna+Be+a+Release+Engineer
 
+# prerequisites: 
+# git
+# 
+# gem sprite
+# 
+
 set -uex
 
 # TODO: take in a list of features to be merged, not just one
