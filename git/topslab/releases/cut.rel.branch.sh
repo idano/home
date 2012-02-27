@@ -18,18 +18,20 @@ REL_NAME=$2
 # merge the feature 
 
 # verify we're on the right branch
-git checkout -t feature/$FTR_NAME
-git pull
 git checkout develop
-git merge origin/develop
-git checkout feature/$FTR_NAME
-git pull origin/develop
-git flow feature finish $FTR_NAME
+git pull
+
+for i in $FTR_LIST; do
+  git checkout -t feature/$FTR_NAME
+  git pull origin/develop
+  git flow feature finish $FTR_NAME
+done
 
 # git push origin develop
+
+# TODO: verify: this should actually never be necessary since we only just merged...
 git fetch
 if [ `git log origin/develop..feature/$FTR_NAME | wc -l` -gt 0]; then
-# TODO: verify: this should actually never be necessary since we only just merged...
   echo 'we found some stray commits on the feature branch'
 fi
 
