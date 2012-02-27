@@ -18,11 +18,7 @@ REL_NAME=$2
 # merge the feature 
 
 # verify we're on the right branch
-if not `git rev-parse --abbrev-ref HEAD | grep "feature/$FTR_NAME"`; then
-  echo 'ERROR: please switch to the feature branch you want to merge'
-  exit
-fi
-
+git checkout -t feature/$FTR_NAME
 git pull
 git checkout develop
 git merge origin/develop
