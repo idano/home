@@ -24,7 +24,7 @@ git pull
 for i in $FTR_LIST; do
   git checkout -t feature/$FTR_NAME
   git pull origin/develop
-  git flow feature finish $FTR_NAME
+  flow feature finish $FTR_NAME
 done
 
 # git push origin develop
@@ -36,7 +36,7 @@ if [ `git log origin/develop..feature/$FTR_NAME | wc -l` -gt 0]; then
 fi
 
 # delete feature branch
-git push origin :feature/$FTR_NAME
+#git push origin :feature/$FTR_NAME
 git flow release start $REL_NAME
 # TODO: verify sprite gem is there
 sprite
@@ -45,7 +45,7 @@ rake optimize
 git status
 git add .
 git commit
-git push origin release/$REL_NAME
+#git push origin release/$REL_NAME
 
 echo "Release $REL_NAME was pushed to git"
 
