@@ -49,4 +49,3 @@ git commit
 #git push origin release/$REL_NAME
 
 echo "Release $REL_NAME was pushed to git"
-
