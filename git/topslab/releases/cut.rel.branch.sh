@@ -33,6 +33,7 @@ done
 git fetch
 if [ `git log origin/develop..feature/$FTR_NAME | wc -l` -gt 0]; then
   echo 'we found some stray commits on the feature branch'
+  exit
 fi
 
 # delete feature branch
