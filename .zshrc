@@ -23,7 +23,6 @@ HISTFILE=~/.zsh_history
 
 unsetopt correct_all
 
-<<<<<<< HEAD
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
@@ -39,9 +38,4 @@ autoload -U zmv
 # cd +1 to jump to dir 1 from top
 # cd -3 to jump to dir 3 from bottom
 setopt AUTO_PUSHD
-=======
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
-export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
->>>>>>> d0b511064d0ce98d676ce828eb517b4ae5a528fc
