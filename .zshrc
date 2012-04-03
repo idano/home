@@ -23,6 +23,19 @@ HISTFILE=~/.zsh_history
 
 unsetopt correct_all
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+
+autoload -U compinit && compinit
+# ps tree for kill completion
+zstyle ':completion:*:*:kill:*:processes' command 'ps --forest -e -o pid,user,tty,cmd'
+# zmv for programmable renames
+# zmv '(*).txt' '$1.html'
+autoload -U zmv
+
+# remember directories you've navigated through
+# dirs -v to list
+# cd +1 to jump to dir 1 from top
+# cd -3 to jump to dir 3 from bottom
+setopt AUTO_PUSHD
+

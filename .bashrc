@@ -101,13 +101,15 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 source ~/.nova/novarc
-[[ -s "/Users/mseelaus/.rvm/scripts/rvm" ]] && source "/Users/mseelaus/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
 # periodically upload file changes to git
 ~/bin/synchome.sh 2>&1 >> .synclog &
 
 export PATH=/home/t/ruby-1.9.2-p290-2/bin/:$PATH
 #complete -W "$(echo `cat ~/.ssh/known_hosts | cut -f 1 -d ' ' | sed -e s/,.*//g | uniq | grep -v "\["`;)" ssh
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+<<<<<<< HEAD
+
 # periodically upload file changes to git
 ~/bin/synchome.sh 2>&1 >> .synclog &
+=======
+>>>>>>> 6e68de90fa73b4997a23d59fe51ca4e3454322e5
