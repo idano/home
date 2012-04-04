@@ -1,4 +1,5 @@
 # Set to this to use case-sensitive completion
+export EDITOR=vi
 CASE_SENSITIVE="true"
 setopt bash_autolist
 
