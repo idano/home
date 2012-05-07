@@ -1,5 +1,5 @@
 #!/bin/bash        
-set -ue
+set -uex
 
 if [ `whoami` != 'mseelaus' ]; then
     echo 'please run this script as user mseelaus'
