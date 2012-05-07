@@ -15,7 +15,7 @@ else
 # TODO: get from another server (ssvm)
         # set perms for authorized_keys if it exists
         sudo chmod u+w ~/.ssh/authorized_keys || true
-        scp -r mseelaus.np.wc1.yellowpages.com:~/.ssh . || true
+        scp -r server.seelaus.ch:~/.ssh . || true
         sudo chmod 0600 .ssh/*
 # TODO: check if git is installed
         #git clone git@git.corp.attinteractive.com:mseelaus/home.git
