@@ -42,3 +42,4 @@ setopt AUTO_PUSHD
 #ps aux | grep synergy | grep -v grep || synergys --config /etc/synergy.conf
 #
 test -f ~/.zshrc.local && source ~/.zshrc.local
+bindkey '^R' history-incremental-search-backward
