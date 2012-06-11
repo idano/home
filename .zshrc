@@ -40,3 +40,5 @@ autoload -U zmv
 # cd -3 to jump to dir 3 from bottom
 setopt AUTO_PUSHD
 #ps aux | grep synergy | grep -v grep || synergys --config /etc/synergy.conf
+#
+test -f ~/.zshrc.local && source ~/.zshrc.local
