@@ -5,8 +5,7 @@ if [ $running -lt 3 ]; then
     while [ 1 ]; do
         cd
         echo `date` >> .synclog
-#        git add . 2>&1 >> .synclog
-        git commit -a -m "auto upload" 2>&1 >> .synclog
+        git commit -a -m "auto upload `date`" 2>&1 >> .synclog
         git pull 2>&1 >> .synclog
         git push origin master 2>&1 >> .synclog
         sleep 600
