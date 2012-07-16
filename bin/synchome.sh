@@ -8,7 +8,7 @@ if [ $running -lt 3 ]; then
         git commit -a -m "auto upload `date`" 2>&1 >> .synclog
         git pull 2>&1 >> .synclog
         git push origin master 2>&1 >> .synclog
-        sleep 600
+        sleep 60
     done
 else
     echo "synchome already running"

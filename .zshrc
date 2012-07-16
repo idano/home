@@ -43,3 +43,5 @@ unsetopt correct_all
 #
 #test -f ~/.zshrc.local && source ~/.zshrc.local
 bindkey '^R' history-incremental-search-backward
+# enable vim mode
+bindkey -v

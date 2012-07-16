@@ -104,3 +104,6 @@ source ~/.nova/novarc
 
 export PATH=/home/t/ruby-1.9.2-p290-2/bin/:$PATH
 #complete -W "$(echo `cat ~/.ssh/known_hosts | cut -f 1 -d ' ' | sed -e s/,.*//g | uniq | grep -v "\["`;)" ssh
+
+# enable vim mode
+set -o vim
