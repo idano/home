@@ -1,13 +1,35 @@
 #!/bin/bash        
 set -uex
 
+function usage {
+  cat << EOF
+  Usage: `basename $0` [-f] 
+
+  Example: `basename $0` -k
+
+  options:
+    -k copy keys from server.seelaus.ch (default: no)
+    -h print this help message
+EOF
+  exit 1
+}
+
+COPY_KEYS=false
+while getopts "khvo" OPTION; do
+  case $OPTION in
+    k) COPY_KEYS=true;;
+    h) usage;;
+    [?]) usage;;
+  esac
+done           
+
 cd
 if [ -d '.git' ]; then
   echo 'init was already run.'
   exit 1
 else
   echo "copying keys from server.seelaus.ch"
-  scp -r server.seelaus.ch:~/.ssh . || true
+  $COPY_KEYS && scp -r server.seelaus.ch:~/.ssh . || true
   # set perms for authorized_keys if it exists
   sudo chmod u+w ~/.ssh/authorized_keys || true
   sudo chmod 0600 .ssh/*
