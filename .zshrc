@@ -1,5 +1,5 @@
 # Set to this to use case-sensitive completion
-export EDITOR=vi
+export EDITOR=vim
 CASE_SENSITIVE="true"
 setopt bash_autolist
 
@@ -7,7 +7,7 @@ setopt bash_autolist
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
-COMPLETION_WAITING_DOTS="true"
+#COMPLETION_WAITING_DOTS="true"
 
 ###############################################
 # colors and prompt
@@ -24,24 +24,29 @@ HISTFILE=~/.zsh_history
 
 unsetopt correct_all
 
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+#export PATH="$HOME/.rbenv/bin:$PATH"
+#eval "$(rbenv init -)"
 
-autoload -U compinit && compinit
+#autoload -U compinit && compinit
 # ps tree for kill completion
-zstyle ':completion:*:*:kill:*:processes' command 'ps --forest -e -o pid,user,tty,cmd'
+#zstyle ':completion:*:*:kill:*:processes' command 'ps --forest -e -o pid,user,tty,cmd'
 # zmv for programmable renames
 # zmv '(*).txt' '$1.html'
-autoload -U zmv
+#autoload -U zmv
 
 # remember directories you've navigated through
 # dirs -v to list
 # cd +1 to jump to dir 1 from top
 # cd -3 to jump to dir 3 from bottom
-setopt AUTO_PUSHD
+#setopt AUTO_PUSHD
 #ps aux | grep synergy | grep -v grep || synergys --config /etc/synergy.conf
 #
-test -f ~/.zshrc.local && source ~/.zshrc.local
+#test -f ~/.zshrc.local && source ~/.zshrc.local
 bindkey '^R' history-incremental-search-backward
+<<<<<<< HEAD
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+=======
+# enable vim mode
+bindkey -v
+>>>>>>> 0b1a190d4d148342a0303f957daa999c4c09c580

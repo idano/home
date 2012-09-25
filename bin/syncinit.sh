@@ -1,31 +1,43 @@
 #!/bin/bash        
 set -uex
 
-if [ `whoami` != 'mseelaus' ]; then
-    echo 'please run this script as user mseelaus'
-    exit 1
+function usage {
+  cat << EOF
+  Usage: `basename $0` [-f] 
+
+  Example: `basename $0` -k
+
+  options:
+    -k copy keys from server.seelaus.ch (default: no)
+    -h print this help message
+EOF
+  exit 1
+}
+
+COPY_KEYS=false
+while getopts "khvo" OPTION; do
+  case $OPTION in
+    k) COPY_KEYS=true;;
+    h) usage;;
+    [?]) usage;;
+  esac
+done           
+
+cd
+if [ -d '.git' ]; then
+  echo 'init was already run.'
+  exit 1
 else
-    cd
-    if [ -d '.git' ]; then
-        echo 'init was already run.'
-        exit 1
-    else
-        echo 'go'
-        # get keys from manubuntu
-# TODO: get from another server (ssvm)
-        # set perms for authorized_keys if it exists
-        sudo chmod u+w ~/.ssh/authorized_keys || true
-        scp -r server.seelaus.ch:~/.ssh . || true
-        sudo chmod 0600 .ssh/*
-# TODO: check if git is installed
-        #git clone git@git.corp.attinteractive.com:mseelaus/home.git
-        git clone git@github.com:idano/home.git
-        rsync -a home/ .
-        rm -rf home
-        sudo chmod 0600 .ssh/*
-        #echo "switching to zsh, you'll have to enter your password'"
-        #chsh -s /bin/zsh mseelaus
-        echo '# periodically upload file changes to git' >> .bashrc
-        echo '~/bin/synchome.sh 2>&1 >> .synclog &' >> .bashrc
-    fi
-fi         
+  echo "copying keys from server.seelaus.ch"
+  $COPY_KEYS && scp -r server.seelaus.ch:~/.ssh . || true
+  # set perms for authorized_keys if it exists
+  sudo chmod u+w ~/.ssh/authorized_keys || true
+  sudo chmod 0600 .ssh/*
+  git clone git@github.com:idano/home.git /tmp/home
+  rsync -a /tmp/home/ .
+  rm -rf /tmp/home
+  sudo chmod 0600 .ssh/*
+  #echo "switching to zsh, you'll have to enter your password'"
+  chsh -s /bin/zsh $USER
+  grep "bin/synchome" .profile || echo '~/bin/synchome.sh 2>&1 >> .synclog & # periodically upload file changes to git' >> .profile
+fi
