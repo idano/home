@@ -45,5 +45,6 @@ unsetopt correct_all
 bindkey '^R' history-incremental-search-backward
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+source ~/.rvm/scripts/rvm
 # enable vim mode
 bindkey -v
