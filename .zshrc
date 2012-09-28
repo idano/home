@@ -43,5 +43,7 @@ unsetopt correct_all
 #
 #test -f ~/.zshrc.local && source ~/.zshrc.local
 bindkey '^R' history-incremental-search-backward
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 # enable vim mode
 bindkey -v
