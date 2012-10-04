@@ -28,10 +28,10 @@ if [ -d '.git' ]; then
   echo 'init was already run.'
   exit 1
 else
-  if [[ ! $COPY_KEYS ]]; then
+  if ! $COPY_KEYS ; then
     echo "Copy SSH keys from server.seelaus.ch? (yes/no)"
     read COPYPLEASE
-    if [[ $COPYPLEASE == "yes" ]]; then
+    if [[ $COPYPLEASE = "yes" ]]; then
       COPY_KEYS=true
     fi
   fi
