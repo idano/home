@@ -38,12 +38,12 @@ else
   $COPY_KEYS && echo "copying keys from server.seelaus.ch"
   $COPY_KEYS && scp -r server.seelaus.ch:~/.ssh . || true
   # set perms for authorized_keys if it exists
-  $COPY_KEYS && sudo chmod u+w ~/.ssh/authorized_keys || true
-  $COPY_KEYS && sudo chmod 0600 .ssh/*
+  $COPY_KEYS && chmod u+w ~/.ssh/authorized_keys || true
+  $COPY_KEYS && chmod 0600 .ssh/*
   git clone git@github.com:idano/home.git /tmp/home
   rsync -a /tmp/home/ .
   rm -rf /tmp/home
-  sudo chmod 0600 .ssh/*
+  chmod 0600 .ssh/*
   #echo "switching to zsh, you'll have to enter your password'"
   chsh -s /bin/zsh $USER
   grep "bin/synchome" .profile || echo '~/bin/synchome.sh 2>&1 >> .synclog & # periodically upload file changes to git' >> .profile
