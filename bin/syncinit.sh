@@ -28,15 +28,17 @@ if [ -d '.git' ]; then
   echo 'init was already run.'
   exit 1
 else
-  if ! $COPY_KEYS ; then
-    echo ""
-    read -p "Copy SSH keys from server.seelaus.ch? (yes/no)" COPYPLEASE
-    if [[ $COPYPLEASE = "yes" ]]; then
-      COPY_KEYS=true
-    fi
-  fi
-  $COPY_KEYS && echo "copying keys from server.seelaus.ch"
-  $COPY_KEYS && scp -r server.seelaus.ch:~/.ssh . || true
+#  if ! $COPY_KEYS ; then
+#    echo ""
+#    read -p "Copy SSH keys from server.seelaus.ch? (yes/no)" COPYPLEASE
+#    if [[ $COPYPLEASE = "yes" ]]; then
+#      COPY_KEYS=true
+#    fi
+#  fi
+#  $COPY_KEYS && echo "copying keys from server.seelaus.ch"
+#  $COPY_KEYS && scp -r server.seelaus.ch:~/.ssh . || true
+  echo "copying keys from server.seelaus.ch"
+  scp -r server.seelaus.ch:~/.ssh . || true
   # set perms for authorized_keys if it exists
   $COPY_KEYS && chmod u+w ~/.ssh/authorized_keys || true
   $COPY_KEYS && chmod 0600 .ssh/*
