@@ -29,8 +29,8 @@ if [ -d '.git' ]; then
   exit 1
 else
   if ! $COPY_KEYS ; then
-    echo "Copy SSH keys from server.seelaus.ch? (yes/no)"
-    read COPYPLEASE
+    echo ""
+    read -p "Copy SSH keys from server.seelaus.ch? (yes/no)" COPYPLEASE
     if [[ $COPYPLEASE = "yes" ]]; then
       COPY_KEYS=true
     fi
