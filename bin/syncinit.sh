@@ -35,11 +35,11 @@ else
       COPY_KEYS=true
     fi
   fi
-  echo "copying keys from server.seelaus.ch"
+  $COPY_KEYS && echo "copying keys from server.seelaus.ch"
   $COPY_KEYS && scp -r server.seelaus.ch:~/.ssh . || true
   # set perms for authorized_keys if it exists
-  sudo chmod u+w ~/.ssh/authorized_keys || true
-  sudo chmod 0600 .ssh/*
+  $COPY_KEYS && sudo chmod u+w ~/.ssh/authorized_keys || true
+  $COPY_KEYS && sudo chmod 0600 .ssh/*
   git clone git@github.com:idano/home.git /tmp/home
   rsync -a /tmp/home/ .
   rm -rf /tmp/home
