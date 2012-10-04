@@ -111,4 +111,4 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 source /home/mseelaus/.rvm/scripts/rvm
 
 # enable vim mode
-set -o vim
+set -o vi
