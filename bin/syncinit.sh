@@ -38,7 +38,7 @@ else
 #  $COPY_KEYS && echo "copying keys from server.seelaus.ch"
 #  $COPY_KEYS && scp -r server.seelaus.ch:~/.ssh . || true
   echo "copying keys from server.seelaus.ch"
-  scp -r server.seelaus.ch:~/.ssh . || true
+  scp -r mseelaus@server.seelaus.ch:~/.ssh . || true
   # set perms for authorized_keys if it exists
   $COPY_KEYS && chmod u+w ~/.ssh/authorized_keys || true
   $COPY_KEYS && chmod 0600 .ssh/*
