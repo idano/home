@@ -23,5 +23,6 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 export EDITOR=vi
+source .local.rc
 ~/bin/synchome.sh 2>&1 >> .synclog & # periodically upload file changes to git
 
