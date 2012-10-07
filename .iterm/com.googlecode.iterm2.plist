@@ -2101,7 +2101,7 @@
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>127 444 592 584 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>4 594 585 434 0 0 1680 1028 </string>
+	<string>0 0 1680 1050 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
 	<string>420 594 420 434 0 0 1680 1050 </string>
 	<key>New Bookmarks</key>
@@ -2262,11 +2262,11 @@
 			<key>Background Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.79269313812255859</real>
+				<real>0.60191375017166138</real>
 				<key>Green Component</key>
-				<real>0.95222294330596924</real>
+				<real>0.86529392004013062</real>
 				<key>Red Component</key>
-				<real>0.97285068035125732</real>
+				<real>0.96380090713500977</real>
 			</dict>
 			<key>Background Image Location</key>
 			<string></string>
@@ -3626,7 +3626,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2012-07-15T20:53:31Z</date>
+	<date>2012-10-06T04:19:39Z</date>
 	<key>SavePasteHistory</key>
 	<true/>
 	<key>ShowBookmarkName</key>
