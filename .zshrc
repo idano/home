@@ -14,4 +14,6 @@ fi
 bindkey '^R' history-incremental-search-backward 
 export EDITOR=vim
 
+echo "starting tmux"
+tmux attach
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
