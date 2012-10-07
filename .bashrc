@@ -107,8 +107,7 @@ export PATH=/home/t/ruby-1.9.2-p290-2/bin/:$PATH
 # periodically upload file changes to git
 ~/bin/synchome.sh 2>&1 >> .synclog &
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-source /home/mseelaus/.rvm/scripts/rvm
-
 # enable vim mode
 set -o vi
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
