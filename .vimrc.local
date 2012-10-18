@@ -1,4 +1,4 @@
-colorscheme darkspectrum
+colorscheme desert
 map <C-N> :NERDTreeToggle<CR>
 imap <C-N> <ESC>:NERDTreeToggle<CR>
 
@@ -37,4 +37,4 @@ set si " smart indent
 set wrap " wrap lines
 
 set nospell
-set NeoComplCacheDisable
+NeoComplCacheDisable
