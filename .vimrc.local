@@ -37,4 +37,3 @@ set si " smart indent
 set wrap " wrap lines
 
 set nospell
-NeoComplCacheDisable
