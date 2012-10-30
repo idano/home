@@ -110,4 +110,4 @@ export PATH=/home/t/ruby-1.9.2-p290-2/bin/:$PATH
 # enable vim mode
 set -o vi
 
-PATH=/home/t/ruby-1.9.2-p290-2/bin/:$PATH
+PATH=/home/t/ruby-1.9.2-p290-2/bin/:$PATH:/home/t/sbin
