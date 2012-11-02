@@ -1,3 +1,21 @@
+" set up vundle
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+" let Vundle manage Vundle
+Bundle 'gmarik/vundle'
+
+" My Bundles here:
+"
+" original repos on github
+Bundle 'tpope/vim-fugitive'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'The-NERD-tree'
+Bundle 'nerdtree-ack'
+Bundle 'Syntastic'
+Bundle 'The-NERD-Commenter'
+
+filetype plugin indent on
+
 colorscheme desert
 map <C-N> :NERDTreeToggle<CR>
 imap <C-N> <ESC>:NERDTreeToggle<CR>
@@ -38,3 +56,5 @@ set wrap " wrap lines
 
 set nospell
 set paste
+set cursorline
+set cursorcolumn
