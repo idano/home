@@ -15,5 +15,5 @@ bindkey '^R' history-incremental-search-backward
 export EDITOR=vim
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-test -d .rvm && source .rvm/scripts/rvm
+test -d ~/.rvm && source ~/.rvm/scripts/rvm
 rvm --help 2>&1 > /dev/null && rvm use 1.9.3
