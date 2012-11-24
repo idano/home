@@ -12,8 +12,6 @@
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
