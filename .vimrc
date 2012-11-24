@@ -18,7 +18,7 @@ Bundle 'The-NERD-Commenter'
 
 filetype plugin indent on
 
-colorscheme Zenburn
+colorscheme zenburn
 map <C-N> :NERDTreeToggle<CR>
 imap <C-N> <ESC>:NERDTreeToggle<CR>
 
