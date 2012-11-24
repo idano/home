@@ -46,7 +46,7 @@ else
   rsync -a /tmp/home/ .
   rm -rf /tmp/home
   chmod 0600 .ssh/*
+  grep "bin/synchome" .profile || echo '~/bin/synchome.sh 2>&1 >> .synclog & # periodically upload file changes to git' >> .profile
   #echo "switching to zsh, you'll have to enter your password'"
   chsh -s /bin/zsh $USER
-  grep "bin/synchome" .profile || echo '~/bin/synchome.sh 2>&1 >> .synclog & # periodically upload file changes to git' >> .profile
 fi
