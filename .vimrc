@@ -15,10 +15,10 @@ Bundle 'The-NERD-tree'
 Bundle 'nerdtree-ack'
 Bundle 'Syntastic'
 Bundle 'The-NERD-Commenter'
+Bundle 'Zenburn'
 
 filetype plugin indent on
 
-colorscheme zenburn
 map <C-N> :NERDTreeToggle<CR>
 imap <C-N> <ESC>:NERDTreeToggle<CR>
 
@@ -60,3 +60,4 @@ set nospell
 set paste
 set cursorline
 set cursorcolumn
+colorscheme zenburn
