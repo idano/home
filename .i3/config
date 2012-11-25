@@ -143,5 +143,5 @@ bar {
 focus_follows_mouse no
 exec_always /etc/init.d/disable_tap_to_click
 exec_always nm-applet
-exec_always wuala
 exec_always gnome-sound-applet
+exec_always --no-startup-id i3-msg 'workspace 9; exec wuala; workspace 1'
