@@ -1,82 +1,83 @@
 [Background]
-Bold=false
-Color=63,63,63
+Color=0,28,49
+Transparency=false
 
 [BackgroundIntense]
-Bold=false
 Color=63,63,63
+Transparency=false
 
 [Color0]
-Bold=false
 Color=63,63,63
+Transparency=false
 
 [Color0Intense]
-Bold=false
 Color=140,180,160
+Transparency=false
 
 [Color1]
-Bold=false
 Color=145,64,64
+Transparency=false
 
 [Color1Intense]
-Bold=false
 Color=232,114,114
+Transparency=false
 
 [Color2]
-Bold=false
 Color=91,192,94
+Transparency=false
 
 [Color2Intense]
-Bold=false
 Color=170,227,134
+Transparency=false
 
 [Color3]
-Bold=false
 Color=223,159,110
+Transparency=false
 
 [Color3Intense]
-Bold=false
 Color=240,209,128
+Transparency=false
 
 [Color4]
-Bold=false
 Color=91,116,156
+Transparency=false
 
 [Color4Intense]
-Bold=false
 Color=148,192,243
+Transparency=false
 
 [Color5]
-Bold=false
 Color=201,128,178
+Transparency=false
 
 [Color5Intense]
-Bold=false
 Color=244,152,219
+Transparency=false
 
 [Color6]
-Bold=false
 Color=120,179,181
+Transparency=false
 
 [Color6Intense]
-Bold=false
 Color=147,225,227
+Transparency=false
 
 [Color7]
-Bold=false
 Color=220,220,204
+Transparency=false
 
 [Color7Intense]
-Bold=false
 Color=255,255,255
+Transparency=false
 
 [Foreground]
-Bold=false
 Color=220,220,204
+Transparency=false
 
 [ForegroundIntense]
 Bold=true
 Color=220,220,204
+Transparency=false
 
 [General]
 Description=Zenburn
