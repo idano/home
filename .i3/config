@@ -140,7 +140,7 @@ bar {
         status_command i3status
 }
 
-# my config
+# my customization
 focus_follows_mouse no
 exec_always /etc/init.d/disable_tap_to_click
 exec_always nm-applet
