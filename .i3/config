@@ -141,6 +141,7 @@ bar {
 
 # my customization
 bindsym $mod+p focus parent
+bindsym $mod+Shift+L exec i3lock -c 000000
 
 focus_follows_mouse no
 exec_always /etc/init.d/disable_tap_to_click
