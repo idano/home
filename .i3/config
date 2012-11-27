@@ -148,6 +148,12 @@ bindsym $mod+p focus parent
 
 focus_follows_mouse no
 exec_always /etc/init.d/disable_tap_to_click
+workspace 1 output DVI-I-1
+workspace 2 output DVI-I-1
+workspace 3 output DVI-I-1
+workspace 4 output DVI-I-1
+workspace 5 output DVI-I-1
+workspace 6 output DP-0
 exec_always --no-startup-id i3-msg 'rename workspace 1 to "1: local"'
 exec_always --no-startup-id i3-msg 'rename workspace 2 to "2: QA stuff"'
 exec_always --no-startup-id i3-msg 'rename workspace 3 to "3: loadtests"'
