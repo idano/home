@@ -148,12 +148,13 @@ bindsym $mod+p focus parent
 
 focus_follows_mouse no
 exec_always /etc/init.d/disable_tap_to_click
-workspace 1 output DVI-I-1
-workspace 2 output DVI-I-1
-workspace 3 output DVI-I-1
-workspace 4 output DVI-I-1
-workspace 5 output DVI-I-1
-workspace 6 output DP-0
+workspace 1 output DP-0 
+workspace 2 output DP-0
+workspace 3 output DP-0
+workspace 4 output DP-0
+workspace 5 output DP-0
+workspace 6 output DVI-I-1
+workspace 9 output DVI-I-1
 exec_always --no-startup-id i3-msg 'rename workspace 1 to "1: local"'
 exec_always --no-startup-id i3-msg 'rename workspace 2 to "2: QA stuff"'
 exec_always --no-startup-id i3-msg 'rename workspace 3 to "3: loadtests"'
@@ -162,4 +163,5 @@ exec_always --no-startup-id i3-msg 'rename workspace 8 to "8: irc"'
 exec_always --no-startup-id i3-msg 'rename workspace 9 to "9: mail"'
 exec_always nm-applet
 exec_always gnome-sound-applet
+exec_always --no-startup-id i3-msg 'workspace 1; exec konsole'
 exec_always --no-startup-id i3-msg 'workspace 9; exec wuala; workspace 1'
