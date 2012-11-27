@@ -141,11 +141,11 @@ bar {
 
 # my customization
 bindsym $mod+p focus parent
-bindsym $mod+Shift+L exec i3lock -c 000000
+#bindsym $mod+Shift+L exec i3lock -c 000000
 
-rename workspace 1 to "1: local"
+#rename workspace 1 to "1: local"
 rename workspace 2 to "2: QA stuff"
-rename workspace 3 to "3: loadtests"
+#rename workspace 3 to "3: loadtests"
 
 focus_follows_mouse no
 exec_always /etc/init.d/disable_tap_to_click
