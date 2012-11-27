@@ -133,7 +133,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-bindsym $mod+p focus parent
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
@@ -141,6 +140,8 @@ bar {
 }
 
 # my customization
+bindsym $mod+p focus parent
+
 focus_follows_mouse no
 exec_always /etc/init.d/disable_tap_to_click
 exec_always nm-applet
