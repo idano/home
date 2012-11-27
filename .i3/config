@@ -163,7 +163,7 @@ workspace 9 output DVI-I-1
 workspace 10 output DVI-I-1
 
 exec_always i3-msg 'workspace 1; exec konsole'
-exec_always i3-msg 'rename workspace 1 to "1: local"'
+exec_always i3-msg rename workspace "1" to "1: local"
 exec_always i3-msg 'workspace 2; exec konsole'
 exec_always i3-msg 'workspace 3; exec konsole'
 exec_always i3-msg 'workspace 4; exec konsole'
@@ -176,7 +176,7 @@ exec_always i3-msg 'workspace 9; exec konsole'
 exec_always i3-msg 'workspace 10; exec remmina'
 
 exec_always i3-msg 'rename workspace 2 to "2: QA stuff"'
-exec_always i3-msg 'rename workspace 3 to "3: loadtests"'
+exec_always i3-msg 'rename workspace 3 to "3: loadtestsblargh"'
 exec_always i3-msg 'rename workspace 4 to "4: prod issues"'
 exec_always i3-msg 'rename workspace 9 to "9: irc"'
 exec_always i3-msg 'rename workspace 10 to "10: mail"'
