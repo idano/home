@@ -151,9 +151,9 @@ exec_always /etc/init.d/disable_tap_to_click
 exec_always nm-applet
 exec_always gnome-sound-applet
 exec_always --no-startup-id i3-msg 'workspace 9; exec wuala; workspace 1'
-exec_always --no-startup-id i3-msg 'rename workspace number 1 to "1: local"'
-exec_always --no-startup-id i3-msg 'rename workspace number 2 to "2: QA stuff"'
-exec_always --no-startup-id i3-msg 'rename workspace number 3 to "3: loadtests"'
-exec_always --no-startup-id i3-msg 'rename workspace number 4 to "4: prod issues"'
-exec_always --no-startup-id i3-msg 'rename workspace number 8 to "8: irc'
-exec_always --no-startup-id i3-msg 'rename workspace number 9 to "9: mail'
+exec_always --no-startup-id i3-msg 'rename workspace 1 to "1: local"'
+exec_always --no-startup-id i3-msg 'rename workspace 2 to "2: QA stuff"'
+exec_always --no-startup-id i3-msg 'rename workspace 3 to "3: loadtests"'
+exec_always --no-startup-id i3-msg 'rename workspace 4 to "4: prod issues"'
+exec_always --no-startup-id i3-msg 'rename workspace 8 to "8: irc'
+exec_always --no-startup-id i3-msg 'rename workspace 9 to "9: mail'
