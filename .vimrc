@@ -20,7 +20,6 @@ Bundle 'fholgado/minibufexpl.vim'
 
 filetype plugin indent on
 
-noremap <A-1> :1b<Esc>
 imap <C-1> <ESC>:1b<CR>
 map <C-N> :NERDTreeToggle<CR>
 imap <C-N> <ESC>:NERDTreeToggle<CR>
@@ -32,6 +31,16 @@ set history=700
 set autoread
 
 let mapleader = ","
+noremap ,1 :1b<Esc>
+noremap ,2 :2b<Esc>
+noremap ,3 :3b<Esc>
+noremap ,4 :4b<Esc>
+noremap ,5 :5b<Esc>
+noremap ,6 :6b<Esc>
+noremap ,7 :7b<Esc>
+noremap ,8 :8b<Esc>
+noremap ,9 :9b<Esc>
+noremap ,0 :0b<Esc>
 let g:mapleader = ","
 
 set ruler
