@@ -16,6 +16,7 @@ Bundle 'nerdtree-ack'
 Bundle 'Syntastic'
 Bundle 'The-NERD-Commenter'
 Bundle 'Zenburn'
+Bundle 'fholgado/minibufexpl.vim'
 
 filetype plugin indent on
 
