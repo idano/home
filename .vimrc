@@ -62,3 +62,4 @@ set paste
 set cursorline
 set cursorcolumn
 colorscheme zenburn
+let g:miniBufExplMapWindowNavVim = 1
