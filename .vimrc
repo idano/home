@@ -20,8 +20,8 @@ Bundle 'fholgado/minibufexpl.vim'
 
 filetype plugin indent on
 
-noremap <M-1> :1b<CR>
-imap <M-1> <ESC>:1b<CR>
+noremap <A-1> :1b<Esc>
+imap <C-1> <ESC>:1b<CR>
 map <C-N> :NERDTreeToggle<CR>
 imap <C-N> <ESC>:NERDTreeToggle<CR>
 
