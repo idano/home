@@ -1,4 +1,3 @@
-colorscheme desert
 map <C-N> :NERDTreeToggle<CR>
 imap <C-N> <ESC>:NERDTreeToggle<CR>
 
