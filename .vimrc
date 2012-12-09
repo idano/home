@@ -1,4 +1,4 @@
-" set up vundle
+"set up vundle
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/vundle/
@@ -14,7 +14,7 @@ Bundle 'Syntastic'
 Bundle 'Zenburn'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
-Bundle 'fholgado/minibufexpl.vim'
+Bundle 'ctrlp.vim'
 
 filetype plugin indent on
 
@@ -23,13 +23,15 @@ let g:mapleader = ","
 
 filetype plugin indent on
 
-map <C-N> :NERDTreeToggle<CR>
-imap <C-N> <ESC>:NERDTreeToggle<CR>
+map <Leader>n :NERDTreeToggle<CR>
+imap <Leader>n <ESC>:NERDTreeToggle<CR>
+
 map <Leader>f :FufFile<CR>
 imap <Leader>f <ESC>:FufFile<CR>
-map <Leader>b :FufBuffer<CR>
-imap <Leader>b <ESC>:FufBuffer<CR>
-imap <C-1> <ESC>:1b<CR>
+
+nnoremap <Leader>b :buffers<CR>:buffer<Space>
+"map <Leader>b :FufBuffer<CR>
+"imap <Leader>b <ESC>:FufBuffer<CR>
 noremap ,1 :1b<Esc>
 noremap ,2 :2b<Esc>
 noremap ,3 :3b<Esc>
