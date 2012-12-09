@@ -26,9 +26,6 @@ filetype plugin indent on
 map <Leader>n :NERDTreeToggle<CR>
 imap <Leader>n <ESC>:NERDTreeToggle<CR>
 
-map <Leader>f :FufFile<CR>
-imap <Leader>f <ESC>:FufFile<CR>
-
 nnoremap <Leader>b :buffers<CR>:buffer<Space>
 "map <Leader>b :FufBuffer<CR>
 "imap <Leader>b <ESC>:FufBuffer<CR>
@@ -79,4 +76,5 @@ set nospell
 set cursorline
 set cursorcolumn
 colorscheme zenburn
-let g:miniBufExplMapWindowNavVim = 1
+let g:ctrlp_max_files=100000
+let g:ctrlp_clear_cache_on_exit = 0
