@@ -1,3 +1,14 @@
+" automatically install Vundle and plugins if not present
+let iCanHazVundle=1
+let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+if !filereadable(vundle_readme)
+  echo "Installing Vundle.."
+  echo ""
+  silent !mkdir -p ~/.vim/bundle
+  silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+  let iCanHazVundle=0
+endif
+
 "set up vundle
 set nocompatible
 filetype off
@@ -13,6 +24,13 @@ Bundle 'The-NERD-tree'
 Bundle 'Syntastic'
 Bundle 'Zenburn'
 Bundle 'ctrlp.vim'
+
+if iCanHazVundle == 0
+  echo "Installing Bundles, please ignore key map error messages"
+  echo ""
+  :BundleInstall
+endif
+" end Vundle setup
 
 filetype plugin indent on
 
@@ -70,7 +88,7 @@ set si " smart indent
 set wrap " wrap lines
 
 set nospell
-" set paste " conflicts with FuzzyFinder
+set paste
 set cursorline
 set cursorcolumn
 colorscheme zenburn
