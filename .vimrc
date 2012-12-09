@@ -12,8 +12,6 @@ Bundle 'gmarik/vundle'
 Bundle 'The-NERD-tree'
 Bundle 'Syntastic'
 Bundle 'Zenburn'
-Bundle 'L9'
-Bundle 'FuzzyFinder'
 Bundle 'ctrlp.vim'
 
 filetype plugin indent on
