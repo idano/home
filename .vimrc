@@ -9,27 +9,31 @@ Bundle 'gmarik/vundle'
 " My Bundles here:
 "
 " original repos on github
-Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/vim-easymotion'
 Bundle 'The-NERD-tree'
-Bundle 'nerdtree-ack'
 Bundle 'Syntastic'
-Bundle 'The-NERD-Commenter'
 Bundle 'Zenburn'
+Bundle 'L9'
+Bundle 'FuzzyFinder'
 
 filetype plugin indent on
 
+let mapleader = ","
+let g:mapleader = ","
+
 map <C-N> :NERDTreeToggle<CR>
 imap <C-N> <ESC>:NERDTreeToggle<CR>
+map <Leader>f :FufFile<CR>
+imap <Leader>f <ESC>:FufFile<CR>
+map <Leader>b :FufBuffer<CR>
+imap <Leader>b <ESC>:FufBuffer<CR>
+
+
 
 " remember 700 lines"
 set history=700
 
 " automatically reload files on change"
 set autoread
-
-let mapleader = ","
-let g:mapleader = ","
 
 set ruler
 
@@ -57,7 +61,7 @@ set si " smart indent
 set wrap " wrap lines
 
 set nospell
-set paste
+" set paste " conflicts with FuzzyFinder
 set cursorline
 set cursorcolumn
 colorscheme zenburn
