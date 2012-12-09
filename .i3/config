@@ -141,9 +141,9 @@ bar {
 
 # my customization
 bindsym $mod+p focus parent
-#bindsym $mod+Shift+L exec i3lock -c 000000
+bindsym $mod+Shift+F12 exec i3lock -c 000000
 
-#rename workspace 1 to "1: local"
+#rename workspace 0 to "1: local"
 #rename workspace 3 to "3: loadtests"
 
 focus_follows_mouse no

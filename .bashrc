@@ -108,6 +108,6 @@ export PATH=/home/t/ruby-1.9.2-p290-2/bin/:$PATH
 ~/bin/synchome.sh 2>&1 >> .synclog &
 
 # enable vim mode
-set -o vi
+#set -o vi
 
 PATH=/home/t/ruby-1.9.2-p290-2/bin/:$PATH:/home/t/sbin
