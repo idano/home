@@ -10,6 +10,6 @@ if [ $running -lt 3 ]; then
         git push origin master 2>&1 >> .synclog
         sleep 300
     done
-else
-    echo "synchome already running"
+#else
+    #echo "synchome already running"
 fi
