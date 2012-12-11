@@ -95,4 +95,4 @@ set cursorcolumn
 colorscheme zenburn
 let g:ctrlp_max_files=50000
 let g:ctrlp_clear_cache_on_exit = 0
-:NeoComplCacheEnable
+let g:neocomplcache_enable_at_startup = 1
