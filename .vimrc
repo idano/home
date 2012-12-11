@@ -89,7 +89,7 @@ set si " smart indent
 set wrap " wrap lines
 
 set nospell
-set paste
+" set paste " trips up neocomplcache
 set cursorline
 set cursorcolumn
 colorscheme zenburn
