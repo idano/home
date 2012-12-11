@@ -24,6 +24,7 @@ Bundle 'The-NERD-tree'
 Bundle 'Syntastic'
 Bundle 'Zenburn'
 Bundle 'ctrlp.vim'
+Bundle 'neocomplcache'
 
 if iCanHazVundle == 0
   echo "Installing Bundles, please ignore key map error messages"
@@ -94,3 +95,4 @@ set cursorcolumn
 colorscheme zenburn
 let g:ctrlp_max_files=50000
 let g:ctrlp_clear_cache_on_exit = 0
+:NeoComplCacheEnable
