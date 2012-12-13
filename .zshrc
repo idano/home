@@ -16,4 +16,4 @@ bindkey '^R' history-incremental-search-backward
 export EDITOR=vim
 
 test -d ~/.rvm && source ~/.rvm/scripts/rvm && rvm use 1.9.2
-test -x ~/bin/synchome.sh && ~/bin/synchome.sh
+test -e ~/bin/synchome.sh && ~/bin/synchome.sh

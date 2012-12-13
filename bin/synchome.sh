@@ -1,5 +1,7 @@
 #!/bin/bash
+ps aux | grep synchome.sh | grep -v grep
 running=`ps aux | grep synchome.sh | grep -v grep | wc -l`
+ps aux | grep synchome.sh | grep -v grep | wc -l
 echo $running
 if [ $running -lt 3 ]; then
     while [ 1 ]; do
