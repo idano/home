@@ -25,6 +25,8 @@ Bundle 'Syntastic'
 Bundle 'Zenburn'
 Bundle 'ctrlp.vim'
 Bundle 'rails.vim'
+Bundle 'ack.vim'
+Bundle 'NERD_tree-ack.vim'
 
 if iCanHazVundle == 0
   echo "Installing Bundles, please ignore key map error messages"
