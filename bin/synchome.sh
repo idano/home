@@ -1,5 +1,7 @@
 #!/bin/bash
+ps aux | grep synchome.sh | grep -v grep
 running=`ps aux | grep synchome.sh | grep -v grep | wc -l`
+ps aux | grep synchome.sh | grep -v grep | wc -l
 echo $running
 if [ $running -lt 3 ]; then
     while [ 1 ]; do
@@ -10,6 +12,6 @@ if [ $running -lt 3 ]; then
         git push origin master 2>&1 >> .synclog
         sleep 300
     done
-else
-    echo "synchome already running"
+#else
+    #echo "synchome already running"
 fi

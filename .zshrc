@@ -15,6 +15,7 @@ fi
 bindkey '^R' history-incremental-search-backward 
 export EDITOR=vim
 
+test -d ~/.rvm && source ~/.rvm/scripts/rvm && rvm use 1.9.2
+test -e ~/bin/synchome.sh && ~/bin/synchome.sh
+
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-test -d ~/.rvm && source ~/.rvm/scripts/rvm
-rvm --help 2>&1 > /dev/null && rvm use 1.9.2
