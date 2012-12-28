@@ -1,17 +1,18 @@
 #!/bin/bash
-ps aux | grep synchome.sh | grep -v grep
-running=`ps aux | grep synchome.sh | grep -v grep | wc -l`
-ps aux | grep synchome.sh | grep -v grep | wc -l
-echo $running
-if [ $running -lt 3 ]; then
-    while [ 1 ]; do
-        cd
-        echo `date` >> .synclog
-        git commit --untracked-files=no -a -m "auto upload `date`" 2>&1 >> .synclog 
-        git pull 2>&1 >> .synclog
-        git push origin master 2>&1 >> .synclog
-        sleep 300
-    done
-#else
-    #echo "synchome already running"
+LOCKFILE=/tmp/synchome.lock
+if [[ -e $LOCKFILE ]]; then 
+  exit
+else
+  touch /tmp/synchome.lock
 fi
+
+while [ 1 ]; do
+    cd
+    echo `date` >> .synclog
+    git commit --untracked-files=no -a -m "auto upload `date`" 2>&1 >> .synclog 
+    git pull 2>&1 >> .synclog
+    git push origin master 2>&1 >> .synclog
+    sleep 300
+done
+# clean up
+rm $LOCKFILE
