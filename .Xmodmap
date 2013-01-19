@@ -1,12 +1,8 @@
 clear Lock
-keycode 66 = Hyper_L
-add mod4 = Hyper_L
-
 
 !
 ! clean most of the modifiers
 clear control
-clear mod4
 clear mod1
 ! -----------------
 ! left side
@@ -29,3 +25,9 @@ add mod1 = Alt_L Meta_L
 add mod1 = Alt_R Meta_R
 add control = Control_L
 add control = Control_R
+
+clear mod4
+keycode 66 = Hyper_L
+add mod4 = Hyper_L
+
+
