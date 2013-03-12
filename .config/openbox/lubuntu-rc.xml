@@ -259,7 +259,7 @@
   </keybind>
 
   <!-- Launch Task Manager with Ctrl+Alt+Del -->
-  <keybind key="A-C-Backspace">
+  <keybind key="A-C-BackSpace">
       <action name="Execute">
           <command>lxtask</command>
       </action>
