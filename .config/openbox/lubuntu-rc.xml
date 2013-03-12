@@ -271,13 +271,15 @@
       </action>
     </keybind>
 
-   <!-- Fast access to filemanager --> 
-   <keybind key="H-f">
+    <keybind key="H-f">
       <action name="Execute">
+        <startupnotify>
+          <enabled>true</enabled>
+          <name>PCManFM</name>
+        </startupnotify>
         <command>pcmanfm</command>
       </action>
     </keybind>
-
 
   <!--keybindings for LXPanel -->
   <keybind key="H-e">
@@ -801,6 +803,9 @@
 
   # end of the example
 -->
+<application name="pcmanfm">
+        <focus>yes</focus>
+</application>
 </applications>
 
 </openbox_config>
