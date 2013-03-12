@@ -274,10 +274,6 @@
    <!-- Fast access to filemanager --> 
    <keybind key="H-f">
       <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>PCManFM</name>
-        </startupnotify>
         <command>pcmanfm</command>
       </action>
     </keybind>
