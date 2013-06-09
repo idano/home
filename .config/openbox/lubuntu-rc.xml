@@ -202,7 +202,8 @@
     <keybind key="A-C-BackSpace"><action name="Execute"><command>lxtask</command></action></keybind>
     <!-- Fast access to Terminal -->
     <keybind key="H-Return"><action name="Execute"><command>lxterminal</command></action></keybind>
-    <keybind key="H-f"><action name="Execute"><startupnotify><enabled>true</enabled><name>World in xmind</name></startupnotify><command>xmind ~/Documents/Mindmaps/World.xmind</command></action><action name="Execute"><startupnotify><enabled>true</enabled><name>PCManFM</name></startupnotify><command>pcmanfm</command></action></keybind>
+    <keybind key="H-f"><action name="Execute"><startupnotify><enabled>true</enabled><name>PCManFM</name></startupnotify><command>pcmanfm</command></action></keybind>
+    <keybind key="H-w"><action name="Execute"><command>xmind ~/Documents/Mindmaps/World.xmind</command></action></keybind>
     <!--keybindings for LXPanel -->
     <keybind key="H-e"><action name="Execute"><command>lxpanelctl run</command></action></keybind>
     <keybind key="A-F2"><action name="Execute"><command>lxpanelctl run</command></action></keybind>
@@ -212,6 +213,9 @@
     <!-- Keybinding for PrintScreen Key -->
     <keybind key="Print"><action name="Execute"><execute>scrot</execute></action></keybind>
     <keybind key="A-Print"><action name="Execute"><execute>scrot -s</execute></action></keybind>
+    <keybind key="H-F11">
+        <action name="Reconfigure"/>
+    </keybind>
     <!-- Keybinding for Volume management -->
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
