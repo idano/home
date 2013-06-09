@@ -174,7 +174,45 @@
     <moveButton>Middle</moveButton>
     <!-- 'Left', 'Middle', 'Right' -->
   </dock>
-  <keyboard><chainQuitKey>C-g</chainQuitKey><!-- Keybindings for desktop switching --><keybind key="H-h"><action name="DesktopLeft"><dialog>no</dialog><wrap>no</wrap></action></keybind><keybind key="H-l"><action name="DesktopRight"><dialog>no</dialog><wrap>no</wrap></action></keybind><keybind key="H-k"><action name="DesktopUp"><dialog>no</dialog><wrap>no</wrap></action></keybind><keybind key="H-j"><action name="DesktopDown"><dialog>no</dialog><wrap>no</wrap></action></keybind><keybind key="S-H-h"><action name="SendToDesktopLeft"><dialog>no</dialog><wrap>no</wrap></action></keybind><keybind key="S-H-l"><action name="SendToDesktopRight"><dialog>no</dialog><wrap>no</wrap></action></keybind><keybind key="S-H-k"><action name="SendToDesktopUp"><dialog>no</dialog><wrap>no</wrap></action></keybind><keybind key="S-H-j"><action name="SendToDesktopDown"><dialog>no</dialog><wrap>no</wrap></action></keybind><keybind key="H-F1"><action name="Desktop"><desktop>1</desktop></action></keybind><keybind key="H-F2"><action name="Desktop"><desktop>2</desktop></action></keybind><keybind key="H-F3"><action name="Desktop"><desktop>3</desktop></action></keybind><keybind key="H-F4"><action name="Desktop"><desktop>4</desktop></action></keybind><keybind key="H-d"><action name="ToggleShowDesktop"/></keybind><keybind key="C-A-d"><action name="ToggleShowDesktop"/></keybind><!-- Keybindings for windows --><keybind key="A-F4"><action name="Close"/></keybind><keybind key="A-Escape"><action name="Lower"/><action name="FocusToBottom"/><action name="Unfocus"/></keybind><keybind key="A-space"><action name="ShowMenu"><menu>client-menu</menu></action></keybind><!-- Keybindings for window switching --><keybind key="A-Tab"><action name="NextWindow"/></keybind><keybind key="A-S-Tab"><action name="PreviousWindow"/></keybind><keybind key="C-A-Tab"><action name="NextWindow"><panels>yes</panels><desktop>yes</desktop></action></keybind><!-- Keybindings for running applications --><keybind key="H-b"><action name="Execute"><startupnotify><enabled>true</enabled><name>chromium-browser</name></startupnotify><command>chromium-browser</command></action></keybind><!-- Launch Task Manager with Ctrl+Alt+Del --><keybind key="A-C-BackSpace"><action name="Execute"><command>lxtask</command></action></keybind><!-- Fast access to Terminal --><keybind key="H-Return"><action name="Execute"><command>lxterminal</command></action></keybind><keybind key="H-f"><action name="Execute"><startupnotify><enabled>true</enabled><name>World in xmind</name></startupnotify><command>xmind ~/Documents/Mindmaps/World.xmind</command></action><action name="Execute"><startupnotify><enabled>true</enabled><name>PCManFM</name></startupnotify><command>pcmanfm</command></action></keybind><!--keybindings for LXPanel --><keybind key="H-e"><action name="Execute"><command>lxpanelctl run</command></action></keybind><keybind key="A-F2"><action name="Execute"><command>lxpanelctl run</command></action></keybind><keybind key="C-Escape"><action name="Execute"><command>lxpanelctl menu</command></action></keybind><keybind key="F11"><action name="ToggleFullscreen"/></keybind><keybind key="H-space"><action name="ToggleFullscreen"/></keybind><!-- Keybinding for PrintScreen Key --><keybind key="Print"><action name="Execute"><execute>scrot</execute></action></keybind><keybind key="A-Print"><action name="Execute"><execute>scrot -s</execute></action></keybind><!-- Keybinding for Volume management -->
+  <keyboard><chainQuitKey>C-g</chainQuitKey>
+    <!-- Keybindings for desktop switching --><keybind key="H-h"><action name="DesktopLeft"><dialog>no</dialog><wrap>no</wrap></action></keybind>
+    <keybind key="H-l"><action name="DesktopRight"><dialog>no</dialog><wrap>no</wrap></action></keybind>
+    <keybind key="H-k"><action name="DesktopUp"><dialog>no</dialog><wrap>no</wrap></action></keybind>
+    <keybind key="H-j"><action name="DesktopDown"><dialog>no</dialog><wrap>no</wrap></action></keybind>
+    <keybind key="S-H-h"><action name="SendToDesktopLeft"><dialog>no</dialog><wrap>no</wrap></action></keybind>
+    <keybind key="S-H-l"><action name="SendToDesktopRight"><dialog>no</dialog><wrap>no</wrap></action></keybind>
+    <keybind key="S-H-k"><action name="SendToDesktopUp"><dialog>no</dialog><wrap>no</wrap></action></keybind>
+    <keybind key="S-H-j"><action name="SendToDesktopDown"><dialog>no</dialog><wrap>no</wrap></action></keybind>
+    <keybind key="H-F1"><action name="Desktop"><desktop>1</desktop></action></keybind>
+    <keybind key="H-F2"><action name="Desktop"><desktop>2</desktop></action></keybind>
+    <keybind key="H-F3"><action name="Desktop"><desktop>3</desktop></action></keybind>
+    <keybind key="H-F4"><action name="Desktop"><desktop>4</desktop></action></keybind>
+    <keybind key="H-d"><action name="ToggleShowDesktop"/></keybind>
+    <keybind key="C-A-d"><action name="ToggleShowDesktop"/></keybind>
+    <!-- Keybindings for windows --><keybind key="A-F4"><action name="Close"/></keybind>
+    <keybind key="A-Escape"><action name="Lower"/><action name="FocusToBottom"/><action name="Unfocus"/></keybind>
+    <keybind key="A-space"><action name="ShowMenu"><menu>client-menu</menu></action></keybind>
+    <!-- Keybindings for window switching -->
+    <keybind key="A-Tab"><action name="NextWindow"/></keybind>
+    <keybind key="A-S-Tab"><action name="PreviousWindow"/></keybind>
+    <keybind key="C-A-Tab"><action name="NextWindow"><panels>yes</panels><desktop>yes</desktop></action></keybind>
+    <!-- Keybindings for running applications -->
+    <keybind key="H-b"><action name="Execute"><startupnotify><enabled>true</enabled><name>chromium-browser</name></startupnotify><command>chromium-browser</command></action></keybind>
+    <!-- Launch Task Manager with Ctrl+Alt+Del -->
+    <keybind key="A-C-BackSpace"><action name="Execute"><command>lxtask</command></action></keybind>
+    <!-- Fast access to Terminal -->
+    <keybind key="H-Return"><action name="Execute"><command>lxterminal</command></action></keybind>
+    <keybind key="H-f"><action name="Execute"><startupnotify><enabled>true</enabled><name>World in xmind</name></startupnotify><command>xmind ~/Documents/Mindmaps/World.xmind</command></action><action name="Execute"><startupnotify><enabled>true</enabled><name>PCManFM</name></startupnotify><command>pcmanfm</command></action></keybind>
+    <!--keybindings for LXPanel -->
+    <keybind key="H-e"><action name="Execute"><command>lxpanelctl run</command></action></keybind>
+    <keybind key="A-F2"><action name="Execute"><command>lxpanelctl run</command></action></keybind>
+    <keybind key="C-Escape"><action name="Execute"><command>lxpanelctl menu</command></action></keybind>
+    <keybind key="F11"><action name="ToggleFullscreen"/></keybind>
+    <keybind key="H-space"><action name="ToggleFullscreen"/></keybind>
+    <!-- Keybinding for PrintScreen Key -->
+    <keybind key="Print"><action name="Execute"><execute>scrot</execute></action></keybind>
+    <keybind key="A-Print"><action name="Execute"><execute>scrot -s</execute></action></keybind>
+    <!-- Keybinding for Volume management -->
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
           <command>amixer -q sset Master 3%+</command>
