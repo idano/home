@@ -209,7 +209,7 @@
     <keybind key="A-F2"><action name="Execute"><command>lxpanelctl run</command></action></keybind>
     <keybind key="C-Escape"><action name="Execute"><command>lxpanelctl menu</command></action></keybind>
     <keybind key="F11"><action name="ToggleFullscreen"/></keybind>
-    <keybind key="H-space"><action name="ToggleFullscreen"/></keybind>
+    <keybind key="H-space"><action name="ToggleMaximizeFull"/></keybind>
     <!-- Keybinding for PrintScreen Key -->
     <keybind key="Print"><action name="Execute"><execute>scrot</execute></action></keybind>
     <keybind key="A-Print"><action name="Execute"><execute>scrot -s</execute></action></keybind>
