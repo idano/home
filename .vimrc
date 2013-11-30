@@ -21,13 +21,13 @@ Bundle 'gmarik/vundle'
 "
 " original repos on github
 Bundle 'The-NERD-tree'
-Bundle 'Syntastic'
+"Bundle 'Syntastic'
 Bundle 'Zenburn'
 Bundle 'ctrlp.vim'
-Bundle 'rails.vim'
-Bundle 'ack.vim'
-Bundle 'NERD_Tree-and-ack'
-Bundle 'fugitive.vim'
+"Bundle 'rails.vim'
+"Bundle 'ack.vim'
+"Bundle 'NERD_Tree-and-ack'
+"Bundle 'fugitive.vim'
 
 if iCanHazVundle == 0
   echo "Installing Bundles, please ignore key map error messages"

@@ -1,1 +1,1 @@
-setxkbmap -option "caps:super"
+setxkbmap -option "caps:escape"
