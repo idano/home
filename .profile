@@ -21,5 +21,5 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 export EDITOR=vi
-# ~/bin/synchome.sh 2>&1 >> .synclog & # periodically upload file changes to git
+~/bin/synchome.sh 2>&1 >> .synclog & # periodically upload file changes to git
 

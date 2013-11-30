@@ -1,6 +1,7 @@
 #!/bin/bash
 LOCKFILE=/tmp/synchome.lock
 if [[ -e $LOCKFILE ]]; then 
+  echo "lockfile $LOCKFILE already exists"
   exit
 else
   touch /tmp/synchome.lock
