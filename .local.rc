@@ -1,1 +1,2 @@
+setxkbmap -option
 setxkbmap -option "caps:escape"
