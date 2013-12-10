@@ -113,3 +113,4 @@ export PATH=/home/t/ruby-1.9.2-p290-2/bin/:$PATH
 PATH=/home/t/ruby-1.9.2-p290-2/bin/:$PATH:/home/t/sbin
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export PAGER="less -S"

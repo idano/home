@@ -8,6 +8,7 @@
 test -e ~/.local.rc && source ~/.local.rc
 
 export TERM=xterm-256color
+export PAGER="less -S"
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
