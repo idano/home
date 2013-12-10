@@ -1,0 +1,8 @@
+# ssh tips and tricks
+
+# sets up an SSH tunnel
+# -f tells ssh to go to background just before command execution.
+#    usefule if ssh will ask for password but the command should run in bg
+# -N don't execute commands
+# -L <localport>:host(FROM REMOTE HOST):<remoteport>(FROM REMOTE HOST)
+ssh -f -L 3307:localhost:3306 -N manuel@clairvision01.managed.contegix.com 
