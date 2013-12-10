@@ -1,0 +1,9 @@
+
+
+puppet describe -l
+lists all resource types
+
+puppet describe user
+shows details about resource type user
+
+puppet agent --test // trigger manual puppet run on agent node
