@@ -1,0 +1,3 @@
+# useful tricks for bash or zsh
+
+export PAGER="less -S" for mysql horizontal scrolling on big select output

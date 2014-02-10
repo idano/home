@@ -12,8 +12,6 @@
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
@@ -23,6 +21,5 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 export EDITOR=vi
-source .local.rc
 ~/bin/synchome.sh 2>&1 >> .synclog & # periodically upload file changes to git
 

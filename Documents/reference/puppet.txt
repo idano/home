@@ -1,0 +1,36 @@
+
+
+puppet describe -l
+lists all resource types
+
+puppet describe user
+shows details about resource type user
+
+puppet agent --test // trigger manual puppet run on agent node
+
+The Package/File/Service pattern
+================================
+
+Package/File/Service
+
+The example we just saw was very close to a pattern you’ll see constantly in production Puppet code, but it was missing a piece. Let’s complete it:
+
+    # /root/examples/break_ssh.pp
+    package { 'openssh-server':
+      ensure => present,
+      before => File['/etc/ssh/sshd_config'],
+    }
+    file { '/etc/ssh/sshd_config':
+      ensure => file,
+      mode   => 600,
+      source => '/root/examples/sshd_config',
+    }
+    service { 'sshd':
+      ensure     => running,
+      enable     => true,
+      subscribe  => File['/etc/ssh/sshd_config'],
+    }
+
+This is the package/file/service pattern, one of the most useful idioms in Puppet: the package resource makes sure the software and its config file are installed, the config file depends on the package resource, and the service subscribes to changes in the config file.
+
+It’s hard to overstate the importance of this pattern! If you stopped here and only learned this, you could still get a lot of work done.
